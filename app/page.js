@@ -8,7 +8,7 @@ import {
   FaMapMarkerAlt,
   FaUsers,
 } from 'react-icons/fa'
-import GalleryStrip from './components/GalleryStrip'
+import GalleryPreview from './components/GalleryPreview'
 import SpecialProgrammes from './components/SpecialProgrammes'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
@@ -144,7 +144,7 @@ export default function HomePage() {
           <h2 className='mt-4 text-balance text-4xl font-semibold tracking-tight text-plum-dark'>Our school community</h2>
           <p className='mt-3 text-muted'>A glimpse into campus life, classrooms, and the people that make Trinity special.</p>
         </div>
-        <GalleryStrip />
+        <GalleryPreview />
         <div className='mt-8 text-center'>
           <Link href='/gallery' className='gold-outline-btn'>View full gallery</Link>
         </div>

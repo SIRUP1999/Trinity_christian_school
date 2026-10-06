@@ -173,22 +173,6 @@ img {
   text-wrap: balance;
 }
 
-.gallery-strip {
-  animation: gallery-scroll 60s linear infinite;
-  width: max-content;
-}
-
-@keyframes gallery-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gallery-strip {
-    animation: none;
-  }
-}
-
 /* ── Special Programmes ─────────────────────────────────────── */
 
 .sp-section {
