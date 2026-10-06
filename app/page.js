@@ -16,7 +16,7 @@ import featuredTestimonials from './data/featuredTestimonials'
 const campusImage =
   '/images/School_premises.jpeg'
 const schoolVideo =
-  '/videos/WhatsApp%20Video%202026-10-04%20at%208.32.55%20PM.mp4'
+  '/videos/Srone_view_of_trinity_christian_school.mp4'
 
 const highlights = [
   {
@@ -146,7 +146,7 @@ export default function HomePage() {
         </div>
         <GalleryPreview />
         <div className='mt-8 text-center'>
-          <Link href='/gallery' className='gold-outline-btn'>View full gallery</Link>
+          <Link href='/gallery' className='gold-outline-btn'>Explore photos &amp; videos</Link>
         </div>
       </section>
 

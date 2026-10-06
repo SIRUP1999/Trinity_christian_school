@@ -128,12 +128,12 @@ img {
     scroll-behavior: auto;
   }
 
-  .home-hero-video {
-    display: none;
-  }
-
   .school-logo-rotator {
     animation: none;
+  }
+
+  .home-hero-video {
+    display: none;
   }
 
   .school-logo-face-back {
