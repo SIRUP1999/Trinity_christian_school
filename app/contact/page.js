@@ -19,8 +19,8 @@ const contactCards = [
   {
     icon: FaEnvelope,
     title: 'Email us',
-    lines: ['nsoatretrinitychristian@gmail.com'],
-    links: ['mailto:nsoatretrinitychristian@gmail.com'],
+    lines: ['trinitychristianschoolnsoatre@gmail.com'],
+    links: ['mailto:trinitychristianschoolnsoatre@gmail.com'],
   },
   {
     icon: FaClock,

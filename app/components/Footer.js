@@ -40,7 +40,7 @@ export default function Footer() {
             <li>Nsoatre, behind Adwinsa Hotel, Bono Region, Ghana</li>
             <li><a href='tel:+233247995835'>+233 24 799 5835</a></li>
             <li><a href='tel:+233249298640'>+233 24 929 8640</a></li>
-            <li><a href='mailto:nsoatretrinitychristian@gmail.com'>nsoatretrinitychristian@gmail.com</a></li>
+            <li><a href='mailto:trinitychristianschoolnsoatre@gmail.com'>trinitychristianschoolnsoatre@gmail.com</a></li>
           </ul>
         </div>
       </div>
