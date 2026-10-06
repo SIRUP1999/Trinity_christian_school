@@ -362,14 +362,14 @@ function App() {
             {" · "}
             <a href="tel:+233249298640">+233 24 929 8640</a>
             <br />
-            <a href="mailto:nsoatretrinitychristian@gmail.com">
-              nsoatretrinitychristian@gmail.com
+            <a href="mailto:trinitychristianschoolnsoatre@gmail.com">
+              trinitychristianschoolnsoatre@gmail.com
             </a>
           </address>
           <div className="contact-actions">
             <a
               className="button button-primary"
-              href="mailto:nsoatretrinitychristian@gmail.com"
+              href="mailto:trinitychristianschoolnsoatre@gmail.com"
             >
               Email the school
             </a>
