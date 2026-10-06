@@ -2,12 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaAward, FaCross, FaLeaf, FaSchool, FaUsers } from 'react-icons/fa'
 import PageHero from '../components/PageHero'
+import CountUpStats from '../components/CountUpStats'
 
 const stats = [
-  { value: '200+', label: 'Students enrolled' },
-  { value: '15+', label: 'Dedicated teachers' },
-  { value: '4', label: 'School levels' },
-  { value: '4', label: 'Special programmes' },
+  { target: 200, suffix: '+', label: 'Students enrolled' },
+  { target: 15, suffix: '+', label: 'Dedicated teachers' },
+  { target: 4, suffix: '', label: 'School levels' },
+  { target: 4, suffix: '', label: 'Special programmes' },
 ]
 
 const values = [
@@ -52,14 +53,7 @@ export default function AboutPage() {
 
       {/* Stats bar */}
       <section className='section-shell -mt-10 relative z-10 pb-0'>
-        <div className='grid grid-cols-2 gap-4 rounded-3xl border border-border bg-white p-6 shadow-school md:grid-cols-4'>
-          {stats.map(({ value, label }) => (
-            <div key={label} className='text-center'>
-              <p className='font-display text-4xl font-semibold text-plum'>{value}</p>
-              <p className='mt-1 text-sm text-muted'>{label}</p>
-            </div>
-          ))}
-        </div>
+        <CountUpStats stats={stats} />
       </section>
 
       {/* Our story */}
