@@ -18,6 +18,10 @@ export const metadata = {
   title: 'Trinity Christian School | Nsoatre, Ghana',
   description:
     'A Christ-centred learning community in Nsoatre, Ghana, helping children grow in faith, academics, and character.',
+  icons: {
+    icon: '/images/WhatsApp%20Image%202026-10-05%20at%205.19.53%20PM.jpeg2.jpeg',
+    shortcut: '/images/WhatsApp%20Image%202026-10-05%20at%205.19.53%20PM.jpeg2.jpeg',
+  },
   openGraph: {
     title: 'Trinity Christian School',
     description:
