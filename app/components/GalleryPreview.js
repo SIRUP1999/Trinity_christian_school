@@ -2,13 +2,14 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import galleryImages from '../data/galleryImages'
 
 const VISIBLE_IMAGE_COUNT = 6
+const POSITION_ROTATION_INTERVAL = 6_000
 const IMAGE_REFRESH_INTERVAL = 120_000
 
-function PhotoCard({ image, className = '', style, tabIndex }) {
+function PhotoCard({ image, className = '', style, tabIndex, dataGalleryCard }) {
   const { src, alt, category, objectPosition } = image
 
   return (
@@ -17,6 +18,7 @@ function PhotoCard({ image, className = '', style, tabIndex }) {
       className={`group relative block aspect-[4/3] flex-shrink-0 overflow-hidden rounded-[24px] border border-border bg-[#edf2f8] shadow-school ${className}`}
       style={style}
       tabIndex={tabIndex}
+      data-gallery-card={dataGalleryCard}
     >
       <Image
         src={src}
@@ -46,37 +48,132 @@ function getNextBatch(startIndex) {
 }
 
 export default function GalleryPreview() {
-  const [desktopImages, setDesktopImages] = useState(() =>
-    getNextBatch(0),
-  )
+  const gridRef = useRef(null)
+  const previousPositions = useRef(null)
+  const [desktopImages, setDesktopImages] = useState(() => getNextBatch(0))
 
   useEffect(() => {
-    if (
-      galleryImages.length <= VISIBLE_IMAGE_COUNT ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
-      return undefined
+    if (galleryImages.length <= VISIBLE_IMAGE_COUNT) return undefined
+
+    const motionPreference = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    )
+    let nextStartIndex = VISIBLE_IMAGE_COUNT
+    let rotationIntervalId
+    let imageRefreshIntervalId
+
+    const capturePositions = () => {
+      const cards = gridRef.current?.querySelectorAll('[data-gallery-card]')
+      if (!cards?.length) return
+
+      previousPositions.current = new Map(
+        Array.from(cards, (card) => [
+          card.dataset.galleryCard,
+          card.getBoundingClientRect(),
+        ]),
+      )
     }
 
-    let nextStartIndex = VISIBLE_IMAGE_COUNT
-    const intervalId = window.setInterval(() => {
-      setDesktopImages(getNextBatch(nextStartIndex))
-      nextStartIndex = (nextStartIndex + VISIBLE_IMAGE_COUNT) % galleryImages.length
-    }, IMAGE_REFRESH_INTERVAL)
+    const stopAnimation = () => {
+      window.clearInterval(rotationIntervalId)
+      window.clearInterval(imageRefreshIntervalId)
+      rotationIntervalId = undefined
+      imageRefreshIntervalId = undefined
+    }
 
-    return () => window.clearInterval(intervalId)
+    const startAnimation = () => {
+      if (motionPreference.matches) return
+
+      rotationIntervalId = window.setInterval(() => {
+        capturePositions()
+        setDesktopImages((currentImages) => [
+          ...currentImages.slice(1),
+          currentImages[0],
+        ])
+      }, POSITION_ROTATION_INTERVAL)
+
+      imageRefreshIntervalId = window.setInterval(() => {
+        capturePositions()
+        setDesktopImages(getNextBatch(nextStartIndex))
+        nextStartIndex =
+          (nextStartIndex + VISIBLE_IMAGE_COUNT) % galleryImages.length
+      }, IMAGE_REFRESH_INTERVAL)
+    }
+
+    const handleMotionPreferenceChange = () => {
+      previousPositions.current = null
+      stopAnimation()
+
+      if (motionPreference.matches) {
+        gridRef.current
+          ?.querySelectorAll('[data-gallery-card]')
+          .forEach((card) => {
+            card.style.transition = 'none'
+            card.style.transform = ''
+          })
+        return
+      }
+
+      startAnimation()
+    }
+
+    startAnimation()
+    motionPreference.addEventListener('change', handleMotionPreferenceChange)
+
+    return () => {
+      stopAnimation()
+      motionPreference.removeEventListener(
+        'change',
+        handleMotionPreferenceChange,
+      )
+    }
   }, [])
+
+  useLayoutEffect(() => {
+    const oldPositions = previousPositions.current
+    const grid = gridRef.current
+    if (!oldPositions || !grid) return
+
+    previousPositions.current = null
+    const cards = grid.querySelectorAll('[data-gallery-card]')
+
+    cards.forEach((card) => {
+      const previous = oldPositions.get(card.dataset.galleryCard)
+      if (!previous) return
+
+      const current = card.getBoundingClientRect()
+      const x = previous.left - current.left
+      const y = previous.top - current.top
+      if (x === 0 && y === 0) return
+
+      card.style.transition = 'none'
+      card.style.transform = `translate(${x}px, ${y}px)`
+    })
+
+    grid.offsetHeight
+    window.requestAnimationFrame(() => {
+      cards.forEach((card) => {
+        card.style.transition =
+          'transform 850ms cubic-bezier(0.2, 0.75, 0.25, 1)'
+        card.style.transform = ''
+      })
+    })
+  }, [desktopImages])
 
   return (
     <div>
       <div className='section-shell hidden md:block'>
-        <div className='grid grid-cols-2 gap-5 xl:grid-cols-3'>
+        <div
+          ref={gridRef}
+          className='grid grid-cols-2 gap-5 xl:grid-cols-3'
+        >
           {desktopImages.map((image, index) => (
             <PhotoCard
               key={image.src}
               image={image}
               className='gallery-preview-card'
               style={{ animationDelay: `${index * 70}ms` }}
+              dataGalleryCard={image.src}
             />
           ))}
         </div>
