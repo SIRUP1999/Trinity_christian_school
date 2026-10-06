@@ -15,8 +15,6 @@ import featuredTestimonials from './data/featuredTestimonials'
 
 const campusImage =
   '/images/School_premises.jpeg'
-const schoolVideo =
-  '/videos/WhatsApp%20Video%202026-10-04%20at%208.32.55%20PM.mp4'
 
 const highlights = [
   {
@@ -48,18 +46,6 @@ export default function HomePage() {
           sizes='100vw'
           className='object-cover object-center'
         />
-        <video
-          className='home-hero-video absolute inset-0 h-full w-full object-cover'
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload='metadata'
-          poster={campusImage}
-          aria-hidden='true'
-        >
-          <source src={schoolVideo} type='video/mp4' />
-        </video>
         <div className='home-hero-overlay absolute inset-0' />
         <div className='section-shell relative z-10 flex min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
           <div className='max-w-3xl py-12'>
@@ -146,7 +132,7 @@ export default function HomePage() {
         </div>
         <GalleryPreview />
         <div className='mt-8 text-center'>
-          <Link href='/gallery' className='gold-outline-btn'>View full gallery</Link>
+          <Link href='/gallery' className='gold-outline-btn'>Explore photos &amp; videos</Link>
         </div>
       </section>
 

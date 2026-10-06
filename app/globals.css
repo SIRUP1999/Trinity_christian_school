@@ -69,10 +69,6 @@ img {
     linear-gradient(0deg, rgba(6, 24, 64, 0.38) 0%, transparent 48%);
 }
 
-.home-hero-video {
-  object-position: center 44%;
-}
-
 .school-logo-flipper {
   display: block;
   width: 2.75rem;
@@ -126,10 +122,6 @@ img {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .home-hero-video {
-    display: none;
   }
 
   .school-logo-rotator {
