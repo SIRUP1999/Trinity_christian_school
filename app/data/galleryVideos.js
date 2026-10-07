@@ -5,7 +5,7 @@ const galleryVideos = [
     category: 'Campus tour',
     description:
       'Soar over our beautiful campus and see where excellence takes flight.',
-    poster: '/images/School_grounds.jpeg',
+    poster: '/images/video-posters/gallery-trinity-from-above.jpg',
   },
   {
     src: '/videos/Radio_presenter_annoncing_the_school_to_the_public PM.mp4',
@@ -13,7 +13,7 @@ const galleryVideos = [
     category: 'In the community',
     description:
       'Hear what the radio is saying about Trinity Christian School!',
-    poster: '/images/School_proprietor_and_students.jpeg',
+    poster: '/images/video-posters/gallery-trinity-on-air.jpg',
   },
   {
     src: '/videos/Blogger_interviewing_the_proprioter PM.mp4',
@@ -21,7 +21,7 @@ const galleryVideos = [
     category: 'School leadership',
     description:
       'An exclusive interview with the proprietor - the heart behind Trinity.',
-    poster: '/images/Lovely_image_of_proprietor_and_wife.jpeg',
+    poster: '/images/video-posters/gallery-meet-our-founder.jpg',
   },
   {
     src: '/videos/Listen_to_the_good_news_as_he_said_affordable_PM.mp4',
@@ -29,7 +29,7 @@ const galleryVideos = [
     category: 'Why Trinity',
     description:
       'Discover how Trinity combines excellence with affordability for every family.',
-    poster: '/images/School_proprietor_and_students.jpeg',
+    poster: '/images/video-posters/gallery-quality-education-affordable.jpg',
   },
   {
     src: '/videos/Just_listen_for_yourself_PM.mp4',
@@ -37,15 +37,23 @@ const galleryVideos = [
     category: 'Testimonials',
     description:
       'Real voices, real experiences - hear what families love about Trinity.',
-    poster: '/images/Lovely_image_of_proprietor_and_wife.jpeg',
+    poster: '/images/video-posters/gallery-parents-trinity-story.jpg',
   },
   {
     src: '/videos/WhatsApp Video 2026-10-04 at 10.08.50 PM.mp4',
-    title: 'A Day at Trinity',
-    category: 'Campus life',
+    title: 'Celebrating the Reopening of Our ICT Lab',
+    category: 'ICT & innovation',
     description:
-      'Step inside and experience the energy and joy of a typical school day.',
-    poster: '/images/Conducive_environment.jpeg',
+      "Join the Trinity community as we celebrate our newly built ICT lab, a fresh space for students to explore technology and build skills for the future.",
+    poster: '/images/video-posters/gallery-ict-lab-opening.jpg',
+  },
+  {
+    src: '/videos/A_Day_AT_Trinity_PM.mp4',
+    title: 'A Day at Trinity: Exploring Our Modern ICT Lab',
+    category: 'ICT & innovation',
+    description:
+      "Step into a school day at Trinity, from welcoming classrooms to our newly reopened ICT lab, where technology opens new doors for learning.",
+    poster: '/images/video-posters/gallery-inside-modern-ict-lab.jpg',
   },
   {
     src: '/videos/UCMAS_time_during_graduation.mp4',
@@ -53,7 +61,7 @@ const galleryVideos = [
     category: 'Special programs',
     description:
       'Watch our students showcase their incredible mental math and abacus skills!',
-    poster: '/images/School_proprietor_and_students.jpeg',
+    poster: '/images/video-posters/gallery-ucmas-in-action.jpg',
   },
   {
     src: '/videos/Drama_time_during_graduation.mp4',
@@ -61,7 +69,7 @@ const galleryVideos = [
     category: 'Student performances',
     description:
       'Our talented students bring stories to life at graduation day.',
-    poster: '/images/Conducive_environment.jpeg',
+    poster: '/images/video-posters/gallery-drama-graduation.jpg',
   },
   {
     src: '/videos/Drama.mp4',
@@ -69,7 +77,7 @@ const galleryVideos = [
     category: 'Student performances',
     description:
       'Creative expression at its finest - our students shine on stage.',
-    poster: '/images/School_proprietor_and_students.jpeg',
+    poster: '/images/video-posters/gallery-student-drama.jpg',
   },
   {
     src: '/videos/display_of_students_talents_during_graduation_ceremony.mp4',
@@ -77,7 +85,7 @@ const galleryVideos = [
     category: 'Student performances',
     description:
       'A celebration of the gifts, skills, and confidence of our Trinity learners.',
-    poster: '/images/Lovely_image_of_proprietor_and_wife.jpeg',
+    poster: '/images/video-posters/gallery-talent-showcase.jpg',
   },
   {
     src: '/videos/Choreography_with_the_kids.mp4',
@@ -85,7 +93,7 @@ const galleryVideos = [
     category: 'Music and movement',
     description:
       'Little feet, big rhythm - our young dancers stealing the show!',
-    poster: '/images/Conducive_environment.jpeg',
+    poster: '/images/video-posters/gallery-dance-and-movement.jpg',
   },
 ]
 
