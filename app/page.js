@@ -39,7 +39,7 @@ const highlights = [
 export default function HomePage() {
   return (
     <div className='site-shell'>
-      <section className='page-hero min-h-[min(850px,calc(100svh-76px))]'>
+      <section className='page-hero min-h-[500px] md:min-h-[min(850px,calc(100svh-76px))]'>
         <Image
           src={campusImage}
           alt=''
@@ -61,7 +61,7 @@ export default function HomePage() {
           <source src={schoolVideo} type='video/mp4' />
         </video>
         <div className='home-hero-overlay absolute inset-0' />
-        <div className='section-shell relative z-10 flex min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
+        <div className='section-shell relative z-10 flex min-h-[500px] md:min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
           <div className='max-w-3xl py-12'>
             <p className='mb-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-white sm:text-sm'>
               <span className='h-1 w-9 rounded-full bg-gold' />

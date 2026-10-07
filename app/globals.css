@@ -73,6 +73,15 @@ img {
   object-position: center 44%;
 }
 
+/* Mobile: reduce hero height and adjust video positioning */
+@media (max-width: 768px) {
+  .home-hero-video {
+    object-position: center 38%;
+    min-height: 500px;
+    max-height: 600px;
+  }
+}
+
 .school-logo-flipper {
   display: block;
   width: 2.75rem;
