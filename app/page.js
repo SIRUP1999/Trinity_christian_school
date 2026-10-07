@@ -14,7 +14,7 @@ import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
 
 const campusImage = '/images/School_premises.jpeg'
-const schoolVideo = '/videos/school-video.mp4'
+const schoolVideo = '/videos/Srone_view_of_trinity_christian_school.mp4'
 
 const highlights = [
   {
