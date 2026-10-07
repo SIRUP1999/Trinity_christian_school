@@ -41,10 +41,10 @@ const galleryVideos = [
   },
   {
     src: '/videos/WhatsApp Video 2026-10-04 at 10.08.50 PM.mp4',
-    title: 'A Day at Trinity',
-    category: 'Campus life',
+    title: 'A New Chapter in Learning: ICT Lab Reopening',
+    category: 'ICT & innovation',
     description:
-      'Step inside and experience the energy and joy of a typical school day.',
+      "Celebrate the reopening of Trinity's newly built ICT lab, giving students more room to explore, create, and grow through technology.",
     poster: '/images/Conducive_environment.jpeg',
   },
   {
