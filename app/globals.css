@@ -197,6 +197,31 @@ img {
   animation: gallery-preview-enter 700ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 
+.testimonial-grid[data-motion-ready='true'] .testimonial-card:not(.testimonial-card-visible) {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.testimonial-card {
+  transition:
+    opacity 600ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    transform 600ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 300ms ease;
+}
+
+.testimonial-card:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.testimonial-card:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.testimonial-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes gallery-preview-scroll {
   from {
     transform: translateX(0);
@@ -230,6 +255,16 @@ img {
 
   .gallery-preview-card {
     animation: none;
+  }
+
+  .testimonial-grid[data-motion-ready='true'] .testimonial-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
   }
 }
 

@@ -9,6 +9,7 @@ import {
   FaUsers,
 } from 'react-icons/fa'
 import GalleryPreview from './components/GalleryPreview'
+import FeaturedTestimonials from './components/FeaturedTestimonials'
 import SpecialProgrammes from './components/SpecialProgrammes'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
@@ -158,17 +159,7 @@ export default function HomePage() {
           </div>
 
           {featuredTestimonials.length > 0 && (
-            <div className='mt-8 grid gap-5 md:grid-cols-3'>
-              {featuredTestimonials.slice(0, 3).map(({ quote, name, relationship }) => (
-                <figure key={`${name}-${quote}`} className='rounded-3xl bg-[#f5f7fb] p-6'>
-                  <blockquote className='text-muted'>&ldquo;{quote}&rdquo;</blockquote>
-                  <figcaption className='mt-5 border-t border-border pt-4'>
-                    <span className='block font-semibold text-plum-dark'>{name}</span>
-                    {relationship && <span className='mt-1 block text-sm text-muted'>{relationship}</span>}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            <FeaturedTestimonials testimonials={featuredTestimonials} />
           )}
 
           <div className='mt-8 text-center'>
