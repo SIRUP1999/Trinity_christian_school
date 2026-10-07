@@ -65,8 +65,8 @@ img {
 
 .home-hero-overlay {
   background:
-    linear-gradient(90deg, rgba(6, 24, 64, 0.72) 0%, rgba(6, 24, 64, 0.48) 47%, rgba(6, 24, 64, 0.10) 100%),
-    linear-gradient(0deg, rgba(6, 24, 64, 0.38) 0%, transparent 48%);
+    linear-gradient(90deg, rgba(6, 24, 64, 0.45) 0%, rgba(6, 24, 64, 0.30) 47%, rgba(6, 24, 64, 0.05) 100%),
+    linear-gradient(0deg, rgba(6, 24, 64, 0.25) 0%, transparent 48%);
 }
 
 .home-hero-video {
