@@ -15,8 +15,6 @@ import featuredTestimonials from './data/featuredTestimonials'
 
 const campusImage =
   '/images/School_premises.jpeg'
-const schoolVideo =
-  '/videos/Srone_view_of_trinity_christian_school.mp4'
 
 const highlights = [
   {
@@ -39,7 +37,7 @@ const highlights = [
 export default function HomePage() {
   return (
     <div className='site-shell'>
-      <section className='page-hero min-h-[min(850px,calc(100svh-76px))]'>
+      <section className='page-hero min-h-[500px] md:min-h-[min(850px,calc(100svh-76px))]'>
         <Image
           src={campusImage}
           alt=''
@@ -48,20 +46,8 @@ export default function HomePage() {
           sizes='100vw'
           className='object-cover object-center'
         />
-        <video
-          className='home-hero-video absolute inset-0 h-full w-full object-cover'
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload='metadata'
-          poster={campusImage}
-          aria-hidden='true'
-        >
-          <source src={schoolVideo} type='video/mp4' />
-        </video>
         <div className='home-hero-overlay absolute inset-0' />
-        <div className='section-shell relative z-10 flex min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
+        <div className='section-shell relative z-10 flex min-h-[500px] md:min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
           <div className='max-w-3xl py-12'>
             <p className='mb-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-white sm:text-sm'>
               <span className='h-1 w-9 rounded-full bg-gold' />

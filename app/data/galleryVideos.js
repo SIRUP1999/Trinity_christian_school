@@ -1,7 +1,7 @@
 const galleryVideos = [
   {
     src: '/videos/Srone_view_of_trinity_christian_school.mp4',
-    title: 'Aerial View of Trinity Christian School',
+    title: 'A Bird’s-Eye View of Trinity',
     category: 'Around our campus',
     description:
       'Take in Trinity Christian School and its surroundings from a fresh perspective.',
@@ -12,7 +12,7 @@ const galleryVideos = [
     title: 'UCMAS in Action',
     category: 'Learning in action',
     description:
-      'Celebrate our learners and their mental arithmetic and abacus skills at graduation.',
+      'Celebrate our learners’ mental arithmetic and abacus skills at graduation.',
     poster: '/images/School_proprietor_and_students.jpeg',
   },
   {
@@ -33,7 +33,7 @@ const galleryVideos = [
   },
   {
     src: '/videos/display_of_students_talents_during_graduation_ceremony.mp4',
-    title: 'Celebrating Student Talent',
+    title: 'Celebrating Our Students’ Talents',
     category: 'Student performances',
     description:
       'A joyful showcase of the creativity and confidence of our learners.',
