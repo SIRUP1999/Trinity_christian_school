@@ -13,8 +13,8 @@ import SpecialProgrammes from './components/SpecialProgrammes'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
 
-const campusImage =
-  '/images/School_premises.jpeg'
+const campusImage = '/images/School_premises.jpeg'
+const schoolVideo = '/videos/school-video.mp4'
 
 const highlights = [
   {
@@ -46,6 +46,18 @@ export default function HomePage() {
           sizes='100vw'
           className='object-cover object-center'
         />
+        <video
+          className='home-hero-video absolute inset-0 h-full w-full object-cover'
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload='metadata'
+          poster={campusImage}
+          aria-hidden='true'
+        >
+          <source src={schoolVideo} type='video/mp4' />
+        </video>
         <div className='home-hero-overlay absolute inset-0' />
         <div className='section-shell relative z-10 flex min-h-[500px] md:min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
           <div className='max-w-3xl py-12'>
@@ -140,15 +152,9 @@ export default function HomePage() {
         <div className='mx-auto max-w-5xl rounded-[32px] border border-border bg-white p-8 shadow-school sm:p-12'>
           <div className='mx-auto max-w-3xl text-center'>
             <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>Our families</p>
-            <p className='mx-auto mt-3 w-fit rounded-full border border-amber-300 bg-amber-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-amber-900'>
-              Sample content — preview only
-            </p>
             <h2 className='mt-4 text-balance text-4xl font-semibold tracking-tight text-plum-dark sm:text-5xl'>
               What families say about Trinity
             </h2>
-            <p className='mt-4 text-lg text-muted'>
-              These example quotes are here to preview the design. Replace them with real testimonials approved for publication.
-            </p>
           </div>
 
           {featuredTestimonials.length > 0 && (
