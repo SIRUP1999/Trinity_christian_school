@@ -140,15 +140,9 @@ export default function HomePage() {
         <div className='mx-auto max-w-5xl rounded-[32px] border border-border bg-white p-8 shadow-school sm:p-12'>
           <div className='mx-auto max-w-3xl text-center'>
             <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>Our families</p>
-            <p className='mx-auto mt-3 w-fit rounded-full border border-amber-300 bg-amber-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-amber-900'>
-              Sample content — preview only
-            </p>
             <h2 className='mt-4 text-balance text-4xl font-semibold tracking-tight text-plum-dark sm:text-5xl'>
               What families say about Trinity
             </h2>
-            <p className='mt-4 text-lg text-muted'>
-              These example quotes are here to preview the design. Replace them with real testimonials approved for publication.
-            </p>
           </div>
 
           {featuredTestimonials.length > 0 && (

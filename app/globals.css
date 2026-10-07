@@ -73,12 +73,10 @@ img {
   object-position: center 44%;
 }
 
-/* Mobile: reduce hero height and adjust video positioning */
+/* Mobile: adjust video positioning for better framing */
 @media (max-width: 768px) {
   .home-hero-video {
-    object-position: center 38%;
-    min-height: 500px;
-    max-height: 600px;
+    object-position: center 40%;
   }
 }
 
