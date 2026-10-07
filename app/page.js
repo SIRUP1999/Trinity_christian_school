@@ -13,8 +13,8 @@ import SpecialProgrammes from './components/SpecialProgrammes'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
 
-const campusImage =
-  '/images/School_premises.jpeg'
+const campusImage = '/images/School_premises.jpeg'
+const schoolVideo = '/videos/school-video.mp4'
 
 const highlights = [
   {
