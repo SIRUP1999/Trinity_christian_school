@@ -46,6 +46,18 @@ export default function HomePage() {
           sizes='100vw'
           className='object-cover object-center'
         />
+        <video
+          className='home-hero-video absolute inset-0 h-full w-full object-cover'
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload='metadata'
+          poster={campusImage}
+          aria-hidden='true'
+        >
+          <source src={schoolVideo} type='video/mp4' />
+        </video>
         <div className='home-hero-overlay absolute inset-0' />
         <div className='section-shell relative z-10 flex min-h-[500px] md:min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
           <div className='max-w-3xl py-12'>
