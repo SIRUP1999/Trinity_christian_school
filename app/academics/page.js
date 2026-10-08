@@ -6,28 +6,35 @@ import PageHero from '../components/PageHero'
 const levels = [
   {
     name: 'Crèche',
-    ages: 'Ages 1 – 2',
+    ages: 'About 6 months – 2 years',
     desc: 'Sensory play, early communication, and a safe loving environment for our tiniest learners.',
     colour: 'bg-pink-50 border-pink-100',
     dot: 'bg-pink-400',
   },
   {
     name: 'Nursery',
-    ages: 'Ages 3 – 4',
+    ages: 'About 2 – 4 years',
     desc: 'Phonics, numbers, creative play, and social skills to prepare children for formal schooling.',
     colour: 'bg-orange-50 border-orange-100',
     dot: 'bg-orange-400',
   },
   {
+    name: 'KG',
+    ages: 'About 4 – 6 years',
+    desc: 'Building early literacy and numeracy, confidence, and readiness for the transition to Primary.',
+    colour: 'bg-yellow-50 border-yellow-100',
+    dot: 'bg-yellow-400',
+  },
+  {
     name: 'Primary',
-    ages: 'Ages 5 – 11',
+    ages: 'About 6 – 12 years',
     desc: 'English, Mathematics, Science, Social Studies, and Creative Arts across six structured years.',
     colour: 'bg-blue-50 border-blue-100',
     dot: 'bg-blue-400',
   },
   {
     name: 'JHS',
-    ages: 'Ages 12 – 15',
+    ages: 'About 12 – 15 years',
     desc: 'BECE preparation with core subjects, electives, and strong academic and moral guidance.',
     colour: 'bg-plum/5 border-plum/10',
     dot: 'bg-plum',
@@ -105,7 +112,7 @@ export default function AcademicsPage() {
           <h2 className='mt-4 text-balance text-4xl font-semibold tracking-tight text-plum-dark'>From Crèche to JHS</h2>
           <p className='mt-4 text-muted'>We walk with every child from their very first steps in learning all the way to Junior High School.</p>
         </div>
-        <div className='grid gap-5 sm:grid-cols-2 xl:grid-cols-4'>
+        <div className='grid gap-5 sm:grid-cols-2 xl:grid-cols-5'>
           {levels.map(({ name, ages, desc, colour, dot }) => (
             <article key={name} className={`rounded-3xl border p-6 ${colour}`}>
               <span className={`inline-block h-3 w-3 rounded-full ${dot} mb-4`} />
