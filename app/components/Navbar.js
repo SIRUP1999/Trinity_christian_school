@@ -26,20 +26,20 @@ export default function Navbar() {
               <span className='school-logo-rotator'>
                 <span className='school-logo-face school-logo-face-front'>
                   <Image
-                    src='/images/WhatsApp%20Image%202026-10-05%20at%205.19.53%20PM.jpeg2.jpeg'
+                    src='/images/school-logo-flip-front.jpg'
                     alt=''
                     fill
-                    sizes='44px'
+                    sizes='52px'
                     priority
                     className='rounded-full border border-white/70 bg-white object-cover'
                   />
                 </span>
                 <span className='school-logo-face school-logo-face-back'>
                   <Image
-                    src='/images/WhatsApp%20Image%202026-10-05%20at%205.19.53%20PM.jpeg'
+                    src='/images/school-logo-flip-back.jpg'
                     alt=''
                     fill
-                    sizes='44px'
+                    sizes='52px'
                     className='rounded-full border border-white/70 bg-white object-cover'
                   />
                 </span>

@@ -82,9 +82,9 @@ img {
 
 .school-logo-flipper {
   display: block;
-  width: 2.75rem;
-  height: 2.75rem;
-  flex: 0 0 2.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 3.25rem;
   perspective: 700px;
 }
 
