@@ -31,13 +31,13 @@ const steps = [
 ]
 
 const documents = [
-  'Child\'s full name',
-  'Child\'s date of birth',
-  'Child\'s immunization records',
-  'Passport-sized picture of the child',
-  'Parent or guardian\'s name',
-  'Parent or guardian\'s contact number',
-  'Residential location or address',
+  'Child name',
+  'Child date of birth',
+  'Immunization records',
+  'Passport picture',
+  'Parent name',
+  'Parent contact',
+  'Location',
 ]
 
 const levels = [
