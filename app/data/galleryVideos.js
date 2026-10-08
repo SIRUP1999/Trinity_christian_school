@@ -33,11 +33,11 @@ const galleryVideos = [
   },
   {
     src: '/videos/Just_listen_for_yourself_PM.mp4',
-    title: 'Parents Share Their Trinity Story',
-    category: 'Testimonials',
+    title: 'A Blogger’s Conversation with Our Proprietor',
+    category: 'Blogger interview',
     description:
-      'Real voices, real experiences - hear what families love about Trinity.',
-    poster: '/images/video-posters/gallery-parents-trinity-story.jpg',
+      'Our proprietor shares the vision, values, and story behind Trinity Christian School in a conversation with a blogger.',
+    poster: '/images/video-posters/gallery-meet-our-founder.jpg',
   },
   {
     src: '/videos/WhatsApp Video 2026-10-04 at 10.08.50 PM.mp4',
