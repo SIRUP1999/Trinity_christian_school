@@ -7,7 +7,7 @@ import CountUpStats from '../components/CountUpStats'
 const stats = [
   { target: 200, suffix: '+', label: 'Students enrolled' },
   { target: 15, suffix: '+', label: 'Dedicated teachers' },
-  { target: 4, suffix: '', label: 'School levels' },
+  { target: 5, suffix: '', label: 'School levels' },
   { target: 4, suffix: '', label: 'Special programmes' },
 ]
 
@@ -35,10 +35,11 @@ const values = [
 ]
 
 const levels = [
-  { name: 'Crèche', ages: 'Ages 1 – 2', desc: 'A safe, nurturing space for our youngest learners to explore and grow.' },
-  { name: 'Nursery', ages: 'Ages 3 – 4', desc: 'Building early language, social, and motor skills through play-based learning.' },
-  { name: 'Primary', ages: 'Ages 5 – 11', desc: 'Core academics, creativity, and character development across six years.' },
-  { name: 'JHS', ages: 'Ages 12 – 15', desc: 'Preparing students for the BECE with strong academics and leadership skills.' },
+  { name: 'Crèche', ages: 'About 6 months – 2 years', desc: 'A safe, nurturing space for our youngest learners to explore and grow.' },
+  { name: 'Nursery', ages: 'About 2 – 4 years', desc: 'Building early language, social, and motor skills through play-based learning.' },
+  { name: 'KG', ages: 'About 4 – 6 years', desc: 'Building early literacy and numeracy, confidence, and readiness for the transition to Primary.' },
+  { name: 'Primary', ages: 'About 6 – 12 years', desc: 'Core academics, creativity, and character development across six years.' },
+  { name: 'JHS', ages: 'About 12 – 15 years', desc: 'Preparing students for the BECE with strong academics and leadership skills.' },
 ]
 
 export default function AboutPage() {
@@ -98,7 +99,7 @@ export default function AboutPage() {
           <h2 className='mt-4 text-balance text-4xl font-semibold tracking-tight text-plum-dark'>School levels & age groups</h2>
           <p className='mt-4 text-muted'>From our youngest learners to Junior High, we walk with every child at every stage.</p>
         </div>
-        <div className='grid gap-5 sm:grid-cols-2 xl:grid-cols-4'>
+        <div className='grid gap-5 sm:grid-cols-2 xl:grid-cols-5'>
           {levels.map(({ name, ages, desc }, i) => (
             <article key={name} className='relative grid-card overflow-hidden'>
               <div className='absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-plum/8 text-lg font-bold text-plum/30'>
