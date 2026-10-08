@@ -31,18 +31,21 @@ const steps = [
 ]
 
 const documents = [
-  'Child\'s birth certificate',
-  'Passport-sized photograph of the child',
-  'Parent or guardian national ID',
-  'Previous school report (for Primary and JHS applicants)',
-  'Immunisation / health record',
+  'Child\'s full name',
+  'Child\'s date of birth',
+  'Child\'s immunization records',
+  'Passport-sized picture of the child',
+  'Parent or guardian\'s name',
+  'Parent or guardian\'s contact number',
+  'Residential location or address',
 ]
 
 const levels = [
-  { name: 'Crèche', ages: 'Ages 1 – 2' },
-  { name: 'Nursery', ages: 'Ages 3 – 4' },
-  { name: 'Primary 1 – 6', ages: 'Ages 5 – 11' },
-  { name: 'JHS 1 – 3', ages: 'Ages 12 – 15' },
+  { name: 'Crèche', ages: 'About 6 months – 2 years' },
+  { name: 'Nursery', ages: 'About 2 – 4 years' },
+  { name: 'KG', ages: 'About 4 – 6 years' },
+  { name: 'Primary', ages: 'About 6 – 12 years' },
+  { name: 'JHS', ages: 'About 12 – 15 years' },
 ]
 
 export default function AdmissionsPage() {
@@ -62,7 +65,7 @@ export default function AdmissionsPage() {
             <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>How to apply</p>
             <h2 className='mt-4 text-balance text-4xl font-semibold tracking-tight text-plum-dark'>A simple admission journey</h2>
             <p className='mt-5 text-lg text-muted'>
-              We welcome children from Crèche through to Junior High School. Our admissions process is designed to be straightforward and stress-free for every family.
+              We offer admission for Crèche, Nursery, KG, Primary, and JHS. Our admissions process is designed to be straightforward and stress-free for every family.
             </p>
             <div className='mt-8 space-y-4'>
               {steps.map(({ number, title, description, icon: Icon }) => (
@@ -83,24 +86,25 @@ export default function AdmissionsPage() {
           </div>
 
           <div className='space-y-5'>
-            {/* Age requirements */}
+            {/* Who can apply */}
             <div className='glass-card p-6'>
-              <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>Age requirements</p>
+              <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>Classes and typical ages</p>
               <h3 className='mt-3 text-2xl text-plum'>Who can apply</h3>
               <ul className='mt-4 space-y-3'>
                 {levels.map(({ name, ages }) => (
-                  <li key={name} className='flex items-center justify-between rounded-2xl bg-[#f5f7fb] px-4 py-3'>
+                  <li key={name} className='flex items-center justify-between gap-4 rounded-2xl bg-[#f5f7fb] px-4 py-3'>
                     <span className='font-medium text-plum-dark'>{name}</span>
-                    <span className='text-sm text-muted'>{ages}</span>
+                    <span className='text-right text-sm text-muted'>{ages}</span>
                   </li>
                 ))}
               </ul>
+              <p className='mt-4 text-sm text-muted'>Age ranges are a general guide; the school will confirm the right class for each child.</p>
             </div>
 
             {/* Documents */}
             <div className='glass-card p-6'>
               <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>Admissions checklist</p>
-              <h3 className='mt-3 text-2xl text-plum'>Documents to prepare</h3>
+              <h3 className='mt-3 text-2xl text-plum'>Particulars required</h3>
               <ul className='mt-4 space-y-3'>
                 {documents.map((doc) => (
                   <li key={doc} className='flex gap-3 text-muted'>
