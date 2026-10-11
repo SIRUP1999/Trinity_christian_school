@@ -73,6 +73,239 @@ img {
   object-position: center 44%;
 }
 
+.anniversary-section {
+  position: relative;
+  z-index: 10;
+  margin-top: -3.5rem;
+  padding-bottom: 4rem;
+}
+
+.anniversary-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3rem;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 2rem;
+  color: white;
+  background:
+    radial-gradient(ellipse at 88% 45%, rgba(238, 75, 43, 0.2), transparent 31%),
+    linear-gradient(120deg, #09245e 0%, #17469b 100%);
+  box-shadow: 0 24px 60px rgba(9, 36, 94, 0.18);
+}
+
+.anniversary-card::before {
+  position: absolute;
+  inset: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 1.5rem;
+  content: '';
+  pointer-events: none;
+}
+
+.anniversary-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+}
+
+.anniversary-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.anniversary-eyebrow-line {
+  width: 1.6rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.anniversary-title {
+  margin: 1rem 0 0;
+  color: white;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.anniversary-description {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.anniversary-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.anniversary-primary-link,
+.anniversary-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.anniversary-primary-link {
+  padding: 0.8rem 1.15rem;
+  border-radius: 999px;
+  color: var(--plum-dark);
+  background: var(--gold);
+}
+
+.anniversary-primary-link:hover {
+  background: var(--gold-light);
+}
+
+.anniversary-secondary-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.anniversary-secondary-link:hover {
+  color: var(--gold-light);
+}
+
+.anniversary-seal {
+  position: relative;
+  display: flex;
+  width: clamp(10rem, 19vw, 14rem);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  text-align: center;
+}
+
+.anniversary-seal-orbit {
+  position: absolute;
+  inset: 0.65rem;
+  border: 1px dashed rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+  animation: anniversary-orbit 36s linear infinite;
+}
+
+.anniversary-seal-number {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 9vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+  text-shadow: 0 8px 30px rgba(238, 75, 43, 0.2);
+}
+
+.anniversary-seal-label {
+  margin-top: 0.5rem;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.anniversary-seal-school {
+  margin-top: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.anniversary-star {
+  position: absolute;
+  z-index: 1;
+  color: var(--gold-light);
+  animation: anniversary-twinkle 2.8s ease-in-out infinite;
+}
+
+.anniversary-star-top {
+  top: 12%;
+  right: 17%;
+  font-size: 0.8rem;
+}
+
+.anniversary-star-bottom {
+  bottom: 17%;
+  left: 12%;
+  font-size: 0.55rem;
+  animation-delay: 1.2s;
+}
+
+@keyframes anniversary-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anniversary-twinkle {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: 640px) {
+  .anniversary-section {
+    margin-top: -2rem;
+    padding-bottom: 3rem;
+  }
+
+  .anniversary-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .anniversary-eyebrow,
+  .anniversary-links {
+    justify-content: center;
+  }
+
+  .anniversary-description {
+    font-size: 0.98rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anniversary-seal-orbit,
+  .anniversary-star {
+    animation: none;
+  }
+}
+
 /* Mobile: adjust video positioning for better framing */
 @media (max-width: 768px) {
   .home-hero-video {

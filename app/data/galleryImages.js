@@ -56,6 +56,106 @@ const galleryImages = [
     alt: 'School field under construction',
     category: 'Campus development',
   },
+  {
+    src: '/new_Images/image_20261010_22225532.jpg',
+    alt: 'Young learners enjoying a colourful early-learning classroom',
+    category: 'Early learning',
+  },
+  {
+    src: '/new_Images/image_20261011_063822.webp',
+    alt: 'Pupils sharing their books as they learn side by side',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/new_Images/image_20261011_062828.webp',
+    alt: 'Learners enjoying playtime together in the school playground',
+    category: 'Play and recreation',
+  },
+  {
+    src: '/new_Images/image_20261010_222111125528.jpg',
+    alt: 'Pupils getting hands-on with computers in the ICT lab',
+    category: 'ICT and technology',
+  },
+  {
+    src: '/new_Images/image_20261010_225222512_2.jpg',
+    alt: 'The school buses ready for the day',
+    category: 'School transport',
+  },
+  {
+    src: '/new_Images/image_20261010_225512.jpg',
+    alt: 'A look at the school buildings from the entrance',
+    category: 'Campus',
+  },
+  {
+    src: '/new_Images/image_20261010_225521.jpg',
+    alt: 'A pupil settling in for class',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/new_Images/image_20261010_225521_1.webp',
+    alt: 'Learning beyond books: online visuals bring new ideas to life',
+    category: 'ICT and technology',
+  },
+  {
+    src: '/new_Images/image_20261010_2322225524.jpg',
+    alt: 'Colourful wall art brightens the early-learning room',
+    category: 'Early learning',
+  },
+  {
+    src: '/new_Images/image_202610102212_225523.jpg',
+    alt: 'Learning together in the school computer lab',
+    category: 'ICT and technology',
+  },
+  {
+    src: '/new_Images/image_20261011_061808.webp',
+    alt: 'A cheerful place for little ones to learn together',
+    category: 'Early learning',
+  },
+  {
+    src: '/new_Images/image_20261011_061808_1.webp',
+    alt: 'A shaded play area in the school grounds',
+    category: 'Play and recreation',
+  },
+  {
+    src: '/new_Images/image_20261011_062024.webp',
+    alt: 'A table in the early-learning classroom',
+    category: 'Early learning',
+  },
+  {
+    src: '/new_Images/image_20261011_062026.webp',
+    alt: 'Classwork keeps pupils busy in the classroom',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/new_Images/image_20261011_062026_1.webp',
+    alt: 'Pupils take their places for a lesson',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/new_Images/image_20261011_062028.webp',
+    alt: 'Bright classroom displays make learning inviting',
+    category: 'Learning spaces',
+  },
+  {
+    src: '/new_Images/image_20261011_062814.webp',
+    alt: 'A covered courtyard gives pupils space to play',
+    category: 'Play and recreation',
+  },
+  {
+    src: '/new_Images/image_20261011_062858.webp',
+    alt: 'Pupils learning together around the table',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/new_Images/image_20261011_063805.webp',
+    alt: 'Reading together in the classroom',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/new_Images/image_20261011_063815.webp',
+    alt: 'A pupil at her desk in class',
+    category: 'Classroom learning',
+  },
 ]
 
 export default galleryImages

@@ -10,6 +10,7 @@ export default function GalleryPage() {
         eyebrow="Gallery"
         title="Moments from our learning community."
         subtitle="Photos from our campus, classrooms, and school life in Nsoatre."
+        image="/new_Images/image_20261011_062828.webp"
       />
 
       <section className="section-shell pt-16">

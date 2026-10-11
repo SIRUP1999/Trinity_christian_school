@@ -9,13 +9,14 @@ import {
   FaUsers,
 } from 'react-icons/fa'
 import GalleryPreview from './components/GalleryPreview'
+import HeroVideo from './components/HeroVideo'
+import AnniversarySpotlight from './components/AnniversarySpotlight'
 import FeaturedTestimonials from './components/FeaturedTestimonials'
 import SpecialProgrammes from './components/SpecialProgrammes'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
 
 const campusImage = '/images/School_premises.jpeg'
-const schoolVideo = '/videos/Srone_view_of_trinity_christian_school.mp4'
 
 const highlights = [
   {
@@ -47,18 +48,7 @@ export default function HomePage() {
           sizes='100vw'
           className='object-cover object-center'
         />
-        <video
-          className='home-hero-video absolute inset-0 h-full w-full object-cover'
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload='metadata'
-          poster={campusImage}
-          aria-hidden='true'
-        >
-          <source src={schoolVideo} type='video/mp4' />
-        </video>
+        <HeroVideo />
         <div className='home-hero-overlay absolute inset-0' />
         <div className='section-shell relative z-10 flex min-h-[400px] md:min-h-[min(850px,calc(100svh-76px))] items-center py-24'>
           <div className='max-w-3xl py-12'>
@@ -88,7 +78,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id='school-intro' className='section-shell relative z-10 -mt-14 pb-20'>
+      <AnniversarySpotlight />
+
+      <section id='school-intro' className='section-shell pb-20'>
         <div className='grid gap-6 md:grid-cols-2'>
           <div className='glass-card flex items-center gap-4 p-6'>
             <div className='flex h-12 w-12 items-center justify-center rounded-2xl bg-[#edf3fc] text-plum'>

@@ -55,7 +55,7 @@ export default function AdmissionsPage() {
         eyebrow='Admissions'
         title='Join a caring school family.'
         subtitle='We make the admission process simple, warm, and welcoming for every family.'
-        image='/images/School_premises.jpeg'
+        image='/new_Images/image_20261011_063815.webp'
       />
 
       {/* Intro */}

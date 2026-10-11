@@ -49,7 +49,7 @@ export default function AboutPage() {
         eyebrow='About us'
         title='A school built on faith, care, and excellence.'
         subtitle='Discover the story, values, and people behind Trinity Christian School.'
-        image='/images/School_proprietor_and_students.jpeg'
+        image='/images/School_premises.jpeg'
       />
 
       {/* Stats bar */}

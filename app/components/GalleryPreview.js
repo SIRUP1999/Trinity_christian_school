@@ -7,7 +7,12 @@ import galleryImages from '../data/galleryImages'
 
 const VISIBLE_IMAGE_COUNT = 6
 const POSITION_ROTATION_INTERVAL = 6_000
-const IMAGE_REFRESH_INTERVAL = 120_000
+const IMAGE_REFRESH_INTERVAL = 30_000
+
+const firstNewImageIndex = galleryImages.findIndex((image) =>
+  image.src.startsWith('/new_Images/'),
+)
+const initialImageIndex = firstNewImageIndex === -1 ? 0 : firstNewImageIndex
 
 function PhotoCard({ image, className = '', style, tabIndex, dataGalleryCard }) {
   const { src, alt, category, objectPosition } = image
@@ -50,7 +55,9 @@ function getNextBatch(startIndex) {
 export default function GalleryPreview() {
   const gridRef = useRef(null)
   const previousPositions = useRef(null)
-  const [desktopImages, setDesktopImages] = useState(() => getNextBatch(0))
+  const [desktopImages, setDesktopImages] = useState(() =>
+    getNextBatch(initialImageIndex),
+  )
 
   useEffect(() => {
     if (galleryImages.length <= VISIBLE_IMAGE_COUNT) return undefined
@@ -58,7 +65,8 @@ export default function GalleryPreview() {
     const motionPreference = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     )
-    let nextStartIndex = VISIBLE_IMAGE_COUNT
+    let nextStartIndex =
+      (initialImageIndex + VISIBLE_IMAGE_COUNT) % galleryImages.length
     let rotationIntervalId
     let imageRefreshIntervalId
 
