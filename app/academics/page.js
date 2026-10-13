@@ -102,7 +102,7 @@ export default function AcademicsPage() {
         eyebrow='Academics'
         title='Learning that nurtures bright futures.'
         subtitle='A balanced, Christ-centred curriculum designed to help every child grow.'
-        image='/images/Modern_ICT_Lab.jpeg'
+        image='/images/WhatsApp Image 2026-10-12 at 5.5s5.15 PM-enhance-all-these-images-very-clear-for-me.jpg'
       />
 
       {/* School levels */}

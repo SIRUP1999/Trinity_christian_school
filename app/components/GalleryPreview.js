@@ -9,10 +9,7 @@ const VISIBLE_IMAGE_COUNT = 6
 const POSITION_ROTATION_INTERVAL = 6_000
 const IMAGE_REFRESH_INTERVAL = 30_000
 
-const firstNewImageIndex = galleryImages.findIndex((image) =>
-  image.src.startsWith('/new_Images/'),
-)
-const initialImageIndex = firstNewImageIndex === -1 ? 0 : firstNewImageIndex
+const initialImageIndex = 0
 
 function PhotoCard({ image, className = '', style, tabIndex, dataGalleryCard }) {
   const { src, alt, category, objectPosition } = image

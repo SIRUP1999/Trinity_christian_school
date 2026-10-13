@@ -1,5 +1,45 @@
 const galleryImages = [
   {
+    src: '/images/WhatsApp Image 2026-10-12 at 5.55.14 PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'Trinity pupils gather together in their bright classroom',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/images/WhatsApp Image 2026-10-12 at 5.5s5.15 PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'A welcoming classroom where pupils learn side by side',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/images/WhatsApp Image 2026-10-12 at 5.5s5.15s PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'Pupils focus on their work during a classroom lesson',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/images/WhatsApp Image 2026-10-12 at 5.ssss55.18 PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'A pupil works thoughtfully through a classroom exercise',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/images/WhatsApp Image 2026-10-12 at 5ss.55.14 PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'Growing in confidence through focused classroom learning',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/images/WhatsApp Image 2026-10-12 at 6.45.5sssss7 PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'Young learners share a moment together in class',
+    category: 'Classroom community',
+  },
+  {
+    src: '/images/WhatsApp Image 2026-10-1ss2 at 5.55.18 PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'A lively classroom filled with curious, confident learners',
+    category: 'Classroom learning',
+  },
+  {
+    src: '/images/WhatsApp Image 2026-1sss0-12 at 5.55.18 PM-enhance-all-these-images-very-clear-for-me.jpg',
+    alt: 'Every learner finding their place in the classroom',
+    category: 'Classroom learning',
+  },
+  {
     src: '/images/School_premises.jpeg',
     alt: 'School premises',
     category: 'Campus',
