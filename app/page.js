@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa'
 import GalleryPreview from './components/GalleryPreview'
 import HeroVideo from './components/HeroVideo'
+import Announcements from './components/Announcements'
 import AnniversarySpotlight from './components/AnniversarySpotlight'
 import FeaturedTestimonials from './components/FeaturedTestimonials'
 import SpecialProgrammes from './components/SpecialProgrammes'
@@ -79,6 +80,7 @@ export default function HomePage() {
       </section>
 
       <AnniversarySpotlight />
+      <Announcements />
 
       <section id='school-intro' className='section-shell pb-20'>
         <div className='grid gap-6 md:grid-cols-2'>

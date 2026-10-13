@@ -1,6 +1,7 @@
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaClock } from 'react-icons/fa'
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import PageHero from '../components/PageHero'
 import ContactForm from '../components/ContactForm'
+import SchoolHours from '../components/SchoolHours'
 import TestimonialForm from '../components/TestimonialForm'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from '../data/schoolLocation'
 
@@ -22,11 +23,6 @@ const contactCards = [
     lines: ['trinitychristianschoolnsoatre@gmail.com'],
     links: ['mailto:trinitychristianschoolnsoatre@gmail.com'],
   },
-  {
-    icon: FaClock,
-    title: 'School hours',
-    lines: ['Mon – Fri: 7:00 am – 3:00 pm', 'Office: 7:00 am – 4:00 pm'],
-  },
 ]
 
 export default function ContactPage() {
@@ -41,7 +37,7 @@ export default function ContactPage() {
 
       {/* Contact cards */}
       <section className='section-shell pt-16'>
-        <div className='grid gap-5 sm:grid-cols-2 xl:grid-cols-4'>
+        <div className='grid gap-5 sm:grid-cols-2 xl:grid-cols-3'>
           {contactCards.map(({ icon: Icon, title, lines, links }) => (
             <article key={title} className='glass-card p-6'>
               <span className='mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-plum text-gold-light'>
@@ -65,8 +61,12 @@ export default function ContactPage() {
       </section>
 
       {/* Form + map */}
-      <section className='section-shell pt-16'>
-        <div className='grid gap-8 lg:grid-cols-[1.1fr_0.9fr]'>
+      <section className='section-shell pt-8'>
+        <SchoolHours />
+      </section>
+
+      <section className='section-shell pt-10'>
+        <div className='grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]'>
           <div className='glass-card p-8'>
             <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>Get in touch</p>
             <h2 className='mt-3 text-balance text-4xl font-semibold tracking-tight text-plum-dark'>Send an enquiry</h2>
@@ -112,6 +112,7 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       </section>

@@ -92,11 +92,6 @@ const galleryImages = [
     category: 'School transport',
   },
   {
-    src: '/images/Field_under_construction.jpeg',
-    alt: 'School field under construction',
-    category: 'Campus development',
-  },
-  {
     src: '/new_Images/image_20261010_22225532.jpg',
     alt: 'Young learners enjoying a colourful early-learning classroom',
     category: 'Early learning',
@@ -155,11 +150,6 @@ const galleryImages = [
     src: '/new_Images/image_20261011_061808_1.webp',
     alt: 'A shaded play area in the school grounds',
     category: 'Play and recreation',
-  },
-  {
-    src: '/new_Images/image_20261011_062024.webp',
-    alt: 'A table in the early-learning classroom',
-    category: 'Early learning',
   },
   {
     src: '/new_Images/image_20261011_062026.webp',
