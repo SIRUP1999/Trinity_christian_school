@@ -1,10 +1,19 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { FaArrowRight, FaBullhorn, FaCalendarAlt } from 'react-icons/fa'
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaBullhorn,
+  FaCalendarAlt,
+  FaPause,
+  FaPlay,
+} from 'react-icons/fa'
 import announcements from '../data/announcements'
 
-function AnnouncementCard({ announcement, featured = false, index = 0 }) {
+const ROTATION_INTERVAL = 8_000
+
+function AnnouncementCard({ announcement }) {
   const { date, category, title, summary, href, linkLabel } = announcement
   const formattedDate = new Intl.DateTimeFormat('en-GH', {
     day: 'numeric',
@@ -15,7 +24,7 @@ function AnnouncementCard({ announcement, featured = false, index = 0 }) {
   const content = (
     <>
       <div className='flex flex-wrap items-center gap-3'>
-        <span className='rounded-full bg-plum/8 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-plum'>
+        <span className='max-w-full truncate rounded-full bg-plum/8 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-plum'>
           {category}
         </span>
         <time dateTime={date} className='inline-flex items-center gap-2 text-sm text-muted'>
@@ -23,12 +32,12 @@ function AnnouncementCard({ announcement, featured = false, index = 0 }) {
           {formattedDate}
         </time>
       </div>
-      <h3 className={`${featured ? 'mt-5 text-3xl sm:text-4xl' : 'mt-4 text-2xl'} text-balance font-semibold tracking-tight text-plum-dark`}>
+      <h3 className='announcement-title mt-5 text-balance text-3xl font-semibold tracking-tight text-plum-dark sm:text-4xl'>
         {title}
       </h3>
-      <p className='mt-3 leading-relaxed text-muted'>{summary}</p>
+      <p className='announcement-summary mt-3 leading-relaxed text-muted'>{summary}</p>
       {href && linkLabel && (
-        <span className='mt-5 inline-flex items-center gap-2 text-sm font-semibold text-plum'>
+        <span className='mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-plum'>
           {linkLabel}
           <FaArrowRight aria-hidden='true' />
         </span>
@@ -39,16 +48,12 @@ function AnnouncementCard({ announcement, featured = false, index = 0 }) {
   return href ? (
     <a
       href={href}
-      className={`announcement-card ${featured ? 'announcement-card-featured' : ''}`}
-      style={{ '--announcement-index': index }}
+      className='announcement-card announcement-card-featured justify-center'
     >
       {content}
     </a>
   ) : (
-    <article
-      className={`announcement-card ${featured ? 'announcement-card-featured' : ''}`}
-      style={{ '--announcement-index': index }}
-    >
+    <article className='announcement-card announcement-card-featured justify-center'>
       {content}
     </article>
   )
@@ -57,6 +62,42 @@ function AnnouncementCard({ announcement, featured = false, index = 0 }) {
 export default function Announcements() {
   const sectionRef = useRef(null)
   const [motionReady, setMotionReady] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false)
+  const [isInteracting, setIsInteracting] = useState(false)
+
+  const showAnnouncement = (index) => {
+    setCurrentIndex((index + announcements.length) % announcements.length)
+  }
+
+  const showNext = () => showAnnouncement(currentIndex + 1)
+  const showPrevious = () => showAnnouncement(currentIndex - 1)
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (!motionPreference.matches) setIsAutoPlaying(true)
+
+    const handleMotionPreferenceChange = () => {
+      setIsAutoPlaying(!motionPreference.matches)
+    }
+
+    motionPreference.addEventListener('change', handleMotionPreferenceChange)
+    return () => {
+      motionPreference.removeEventListener('change', handleMotionPreferenceChange)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isAutoPlaying || isInteracting || announcements.length < 2) return undefined
+
+    const interval = window.setInterval(() => {
+      if (!document.hidden) {
+        setCurrentIndex((index) => (index + 1) % announcements.length)
+      }
+    }, ROTATION_INTERVAL)
+
+    return () => window.clearInterval(interval)
+  }, [currentIndex, isAutoPlaying, isInteracting])
 
   useEffect(() => {
     const section = sectionRef.current
@@ -64,7 +105,9 @@ export default function Announcements() {
       return undefined
     }
 
-    const cards = section.querySelectorAll('.announcement-card, .announcement-empty')
+    const cards = section.querySelectorAll(
+      '.announcement-carousel, .announcement-card, .announcement-empty',
+    )
     if (!('IntersectionObserver' in window)) return undefined
 
     let observer
@@ -126,18 +169,60 @@ export default function Announcements() {
         </div>
       ) : announcements.length === 1 ? (
         <div className='mt-10'>
-          <AnnouncementCard announcement={announcements[0]} featured />
+          <AnnouncementCard announcement={announcements[0]} />
         </div>
       ) : (
-        <div className='mt-10 grid gap-5 lg:grid-cols-2'>
-          {announcements.map((announcement, index) => (
-            <AnnouncementCard
-              key={`${announcement.date}-${announcement.title}`}
-              announcement={announcement}
-              featured={index === 0}
-              index={index}
-            />
-          ))}
+        <div
+          className='announcement-carousel mt-10'
+          onMouseEnter={() => setIsInteracting(true)}
+          onMouseLeave={() => setIsInteracting(false)}
+          onFocus={() => setIsInteracting(true)}
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) {
+              setIsInteracting(false)
+            }
+          }}
+          role='region'
+          aria-roledescription='carousel'
+          aria-label='School announcements'
+        >
+          <div className='announcement-carousel-viewport'>
+            <div key={`${currentIndex}-${announcements[currentIndex].title}`} className='announcement-slide'>
+              <AnnouncementCard announcement={announcements[currentIndex]} />
+            </div>
+          </div>
+          <div className='mt-4 flex flex-wrap items-center justify-between gap-3'>
+            <p className='text-sm font-medium text-muted' aria-live='polite'>
+              Announcement {currentIndex + 1} of {announcements.length}
+            </p>
+            <div className='flex items-center gap-2'>
+              <button
+                type='button'
+                onClick={showPrevious}
+                className='announcement-control'
+                aria-label='Show previous announcement'
+              >
+                <FaArrowLeft aria-hidden='true' />
+              </button>
+              <button
+                type='button'
+                onClick={() => setIsAutoPlaying((playing) => !playing)}
+                className='announcement-control announcement-play-control'
+                aria-label={isAutoPlaying ? 'Pause automatic announcements' : 'Play automatic announcements'}
+              >
+                {isAutoPlaying ? <FaPause aria-hidden='true' /> : <FaPlay aria-hidden='true' />}
+                <span>{isAutoPlaying ? 'Pause' : 'Play'}</span>
+              </button>
+              <button
+                type='button'
+                onClick={showNext}
+                className='announcement-control'
+                aria-label='Show next announcement'
+              >
+                <FaArrowRight aria-hidden='true' />
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </section>
