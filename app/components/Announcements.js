@@ -191,11 +191,11 @@ export default function Announcements() {
               <AnnouncementCard announcement={announcements[currentIndex]} />
             </div>
           </div>
-          <div className='mt-4 flex flex-wrap items-center justify-between gap-3'>
-            <p className='text-sm font-medium text-muted' aria-live='polite'>
+          <div className='mt-4 flex flex-col items-center gap-3'>
+            <p className='text-center text-sm font-medium text-muted' aria-live='polite'>
               Announcement {currentIndex + 1} of {announcements.length}
             </p>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center justify-center gap-2'>
               <button
                 type='button'
                 onClick={showPrevious}
