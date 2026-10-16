@@ -3,6 +3,21 @@ import Image from 'next/image'
 import { FaBookOpen, FaFlask, FaPaintBrush, FaRunning, FaCode, FaShieldAlt, FaRobot, FaCalculator } from 'react-icons/fa'
 import PageHero from '../components/PageHero'
 
+export const metadata = {
+  title: 'Academics: Creche, Nursery, Primary & JHS',
+  description:
+    'Explore creche, nursery, KG, primary, JHS, and special learning programmes at Trinity Christian School in Nsoatre, Bono Region.',
+  alternates: {
+    canonical: '/academics',
+  },
+  openGraph: {
+    title: 'Academics at Trinity Christian School',
+    description:
+      'Explore our early years, primary, JHS, and special programmes in Nsoatre, Ghana.',
+    url: '/academics',
+  },
+}
+
 const levels = [
   {
     name: 'Crèche',

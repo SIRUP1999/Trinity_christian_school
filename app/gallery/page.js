@@ -3,6 +3,21 @@ import PageHero from "../components/PageHero";
 import galleryImages from "../data/galleryImages";
 import galleryVideos from "../data/galleryVideos";
 
+export const metadata = {
+  title: 'School Gallery: Campus, Classrooms & School Life',
+  description:
+    'See photos and videos of Trinity Christian School’s campus, classrooms, pupils, and learning community in Nsoatre, Ghana.',
+  alternates: {
+    canonical: '/gallery',
+  },
+  openGraph: {
+    title: 'Trinity Christian School Photo and Video Gallery',
+    description:
+      'Explore campus, classroom, and school-life photos and videos from Nsoatre, Ghana.',
+    url: '/gallery',
+  },
+}
+
 export default function GalleryPage() {
   return (
     <div className="site-shell pb-20">

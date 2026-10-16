@@ -4,6 +4,21 @@ import { FaAward, FaCross, FaLeaf, FaSchool, FaUsers } from 'react-icons/fa'
 import PageHero from '../components/PageHero'
 import CountUpStats from '../components/CountUpStats'
 
+export const metadata = {
+  title: 'About Our School',
+  description:
+    'Learn about Trinity Christian School’s mission, values, learning community, and creche-to-JHS education in Nsoatre, Ghana.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Trinity Christian School',
+    description:
+      'Discover the mission and values behind Trinity Christian School in Nsoatre, Ghana.',
+    url: '/about',
+  },
+}
+
 const stats = [
   { target: 200, suffix: '+', label: 'Students enrolled' },
   { target: 15, suffix: '+', label: 'Dedicated teachers' },

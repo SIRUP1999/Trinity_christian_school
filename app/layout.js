@@ -15,9 +15,20 @@ const playfair = Playfair_Display({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://trinityschoolnsoatre.com'),
   title: 'Trinity Christian School | Nsoatre, Ghana',
+  title: {
+    default: 'Trinity Christian School | Nsoatre, Ghana',
+    template: '%s | Trinity Christian School',
+  },
   description:
     'A Christ-centred learning community in Nsoatre, Ghana, helping children grow in faith, academics, and character.',
+  applicationName: 'Trinity Christian School',
+  category: 'education',
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: '/images/WhatsApp%20Image%202026-10-05%20at%205.19.53%20PM.jpeg2.jpeg',
     shortcut: '/images/WhatsApp%20Image%202026-10-05%20at%205.19.53%20PM.jpeg2.jpeg',
@@ -28,6 +39,7 @@ export const metadata = {
       'Christ-centred, child-focused education in Nsoatre, Bono, Ghana.',
     type: 'website',
     locale: 'en_GH',
+    siteName: 'Trinity Christian School',
   },
 }
 

@@ -5,6 +5,21 @@ import SchoolHours from '../components/SchoolHours'
 import TestimonialForm from '../components/TestimonialForm'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from '../data/schoolLocation'
 
+export const metadata = {
+  title: 'Contact and Location',
+  description:
+    'Contact Trinity Christian School in Nsoatre, Bono Region. Find our location, phone numbers, email, opening hours, and directions.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact Trinity Christian School',
+    description:
+      'Find Trinity Christian School in Nsoatre, Ghana, or contact us by phone and email.',
+    url: '/contact',
+  },
+}
+
 const contactCards = [
   {
     icon: FaMapMarkerAlt,

@@ -17,6 +17,21 @@ import SpecialProgrammes from './components/SpecialProgrammes'
 import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
 
+export const metadata = {
+  title: 'Trinity Christian School in Nsoatre, Ghana',
+  description:
+    'Discover Trinity Christian School in Nsoatre, Bono Region: Christ-centred creche, nursery, KG, primary, and JHS education. Explore our programmes, campus, and admissions.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Trinity Christian School in Nsoatre, Ghana',
+    description:
+      'Christ-centred creche, nursery, KG, primary, and JHS education in Nsoatre, Bono Region, Ghana.',
+    url: '/',
+  },
+}
+
 const campusImage = '/images/School_premises.jpeg'
 
 const highlights = [
@@ -40,6 +55,37 @@ const highlights = [
 export default function HomePage() {
   return (
     <div className='site-shell'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'School',
+            name: 'Trinity Christian School',
+            alternateName: 'Trinity Christian School Nsoatre',
+            description:
+              'A Christ-centred school offering creche, nursery, KG, primary, and JHS education in Nsoatre, Bono Region, Ghana.',
+            url: 'https://trinityschoolnsoatre.com/',
+            email: 'trinitychristianschoolnsoatre@gmail.com',
+            telephone: ['+233247995835', '+233249298640'],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Behind Adwinsa Hotel',
+              addressLocality: 'Nsoatre',
+              addressRegion: 'Bono Region',
+              addressCountry: 'GH',
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: 7.411,
+              longitude: -2.4499722,
+            },
+            hasMap:
+              'https://www.google.com/maps?q=7.411,-2.4499722',
+            sameAs: ['https://trinityschoolnsoatre.netlify.app/'],
+          }).replace(/</g, '\\u003c'),
+        }}
+      />
       <section className='page-hero min-h-[400px] md:min-h-[min(850px,calc(100svh-76px))]'>
         <Image
           src={campusImage}

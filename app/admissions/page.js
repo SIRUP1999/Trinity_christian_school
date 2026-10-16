@@ -3,6 +3,21 @@ import { FaCheckCircle, FaClipboardList, FaEnvelope, FaUserFriends, FaFileAlt, F
 import PageHero from '../components/PageHero'
 import { createSchoolWhatsAppUrl } from '../data/contactLinks'
 
+export const metadata = {
+  title: 'Admissions and Enquiries',
+  description:
+    'Find out how to apply to Trinity Christian School in Nsoatre, Ghana. Explore admission steps and contact the school to arrange a visit.',
+  alternates: {
+    canonical: '/admissions',
+  },
+  openGraph: {
+    title: 'Admissions at Trinity Christian School',
+    description:
+      'Learn about admissions, arrange a school visit, and enquire about places in Nsoatre, Ghana.',
+    url: '/admissions',
+  },
+}
+
 const steps = [
   {
     number: '01',
