@@ -35,10 +35,11 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="mt-8 space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label className="mb-2 block text-sm font-medium text-plum-dark">
+          <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-plum-dark">
             Parent / guardian name
           </label>
           <input
+            id="contact-name"
             name="name"
             type="text"
             required
@@ -47,10 +48,11 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="mb-2 block text-sm font-medium text-plum-dark">
+          <label htmlFor="contact-phone" className="mb-2 block text-sm font-medium text-plum-dark">
             Phone number
           </label>
           <input
+            id="contact-phone"
             name="phone"
             type="tel"
             className="w-full rounded-2xl border border-border bg-[#f5f7fb] px-4 py-3 outline-none transition focus:border-plum focus:ring-2 focus:ring-plum/10"
@@ -59,10 +61,11 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-2 block text-sm font-medium text-plum-dark">
+        <label htmlFor="contact-email" className="mb-2 block text-sm font-medium text-plum-dark">
           Email address
         </label>
         <input
+          id="contact-email"
           name="email"
           type="email"
           required
@@ -71,10 +74,11 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label className="mb-2 block text-sm font-medium text-plum-dark">
+        <label htmlFor="contact-subject" className="mb-2 block text-sm font-medium text-plum-dark">
           Subject
         </label>
         <select
+          id="contact-subject"
           name="subject"
           className="w-full rounded-2xl border border-border bg-[#f5f7fb] px-4 py-3 outline-none transition focus:border-plum focus:ring-2 focus:ring-plum/10"
         >
@@ -85,10 +89,11 @@ export default function ContactForm() {
         </select>
       </div>
       <div>
-        <label className="mb-2 block text-sm font-medium text-plum-dark">
+        <label htmlFor="contact-message" className="mb-2 block text-sm font-medium text-plum-dark">
           Message
         </label>
         <textarea
+          id="contact-message"
           name="message"
           rows="5"
           required
