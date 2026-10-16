@@ -16,7 +16,6 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   metadataBase: new URL('https://trinityschoolnsoatre.com'),
-  title: 'Trinity Christian School | Nsoatre, Ghana',
   title: {
     default: 'Trinity Christian School | Nsoatre, Ghana',
     template: '%s | Trinity Christian School',

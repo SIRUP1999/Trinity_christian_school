@@ -66,6 +66,7 @@ export default function HomePage() {
             description:
               'A Christ-centred school offering creche, nursery, KG, primary, and JHS education in Nsoatre, Bono Region, Ghana.',
             url: 'https://trinityschoolnsoatre.com/',
+            mainEntityOfPage: 'https://trinityschoolnsoatre.com/',
             email: 'trinitychristianschoolnsoatre@gmail.com',
             telephone: ['+233247995835', '+233249298640'],
             address: {
@@ -82,7 +83,6 @@ export default function HomePage() {
             },
             hasMap:
               'https://www.google.com/maps?q=7.411,-2.4499722',
-            sameAs: ['https://trinityschoolnsoatre.netlify.app/'],
           }).replace(/</g, '\\u003c'),
         }}
       />
