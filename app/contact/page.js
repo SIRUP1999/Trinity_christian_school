@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero'
 import ContactForm from '../components/ContactForm'
 import SchoolHours from '../components/SchoolHours'
 import TestimonialForm from '../components/TestimonialForm'
-import { schoolDirectionsUrl, schoolMapEmbedUrl } from '../data/schoolLocation'
+import { schoolDirectionsUrl, schoolMapEmbedUrl, schoolProfile } from '../data/schoolLocation'
 
 export const metadata = {
   title: 'Contact and Location',
@@ -24,19 +24,19 @@ const contactCards = [
   {
     icon: FaMapMarkerAlt,
     title: 'Visit us',
-    lines: ['Behind Adwinsa Hotel', 'Nsoatre, Bono Region, Ghana'],
+    lines: [schoolProfile.addressLine, `${schoolProfile.locality}, ${schoolProfile.region}, ${schoolProfile.country}`],
   },
   {
     icon: FaPhoneAlt,
     title: 'Call us',
-    lines: ['+233 24 799 5835', '+233 24 929 8640'],
+    lines: [schoolProfile.phonePrimary, schoolProfile.phoneSecondary],
     links: ['tel:+233247995835', 'tel:+233249298640'],
   },
   {
     icon: FaEnvelope,
     title: 'Email us',
-    lines: ['trinitychristianschoolnsoatre@gmail.com'],
-    links: ['mailto:trinitychristianschoolnsoatre@gmail.com'],
+    lines: [schoolProfile.email],
+    links: [`mailto:${schoolProfile.email}`],
   },
 ]
 
@@ -93,7 +93,7 @@ export default function ContactPage() {
             <div className='rounded-[28px] border border-border bg-white p-6 shadow-school'>
               <p className='text-sm font-semibold uppercase tracking-[0.25em] text-plum-light'>Find us</p>
               <h3 className='mt-3 text-2xl text-plum'>We are in Nsoatre</h3>
-              <p className='mt-2 text-muted'>Behind Adwinsa Hotel, Nsoatre, Bono Region, Ghana.</p>
+              <p className='mt-2 text-muted'>{schoolProfile.fullAddress}.</p>
               <div className='mt-5 overflow-hidden rounded-[18px] border border-border'>
                 <iframe
                   src={schoolMapEmbedUrl}
@@ -120,10 +120,10 @@ export default function ContactPage() {
               <p className='mt-2 text-white/75 text-sm'>Our team is available Monday to Friday, 7:00 am – 4:00 pm.</p>
               <div className='mt-5 space-y-3'>
                 <a href='tel:+233247995835' className='flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 text-sm font-semibold transition hover:bg-white/20'>
-                  <FaPhoneAlt className='text-gold-light' /> +233 24 799 5835
+                  <FaPhoneAlt className='text-gold-light' /> {schoolProfile.phonePrimary}
                 </a>
                 <a href='tel:+233249298640' className='flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 text-sm font-semibold transition hover:bg-white/20'>
-                  <FaPhoneAlt className='text-gold-light' /> +233 24 929 8640
+                  <FaPhoneAlt className='text-gold-light' /> {schoolProfile.phoneSecondary}
                 </a>
               </div>
             </div>

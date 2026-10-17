@@ -18,16 +18,16 @@ import { schoolDirectionsUrl, schoolMapEmbedUrl } from './data/schoolLocation'
 import featuredTestimonials from './data/featuredTestimonials'
 
 export const metadata = {
-  title: 'Trinity Christian School in Nsoatre, Ghana',
+  title: 'Trinity Christian School Nsoatre | Private Christian School in Ghana',
   description:
-    'Discover Trinity Christian School in Nsoatre, Bono Region: Christ-centred creche, nursery, KG, primary, and JHS education. Explore our programmes, campus, and admissions.',
+    'Discover Trinity Christian School Nsoatre, a Christ-centred private Christian school in Ghana offering creche, nursery, KG, primary, and JHS education with academic excellence and strong values.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Trinity Christian School in Nsoatre, Ghana',
+    title: 'Trinity Christian School Nsoatre',
     description:
-      'Christ-centred creche, nursery, KG, primary, and JHS education in Nsoatre, Bono Region, Ghana.',
+      'A Christ-centred private Christian school in Nsoatre, Bono Region, Ghana, helping children grow in faith, academics, and character.',
     url: '/',
   },
 }
@@ -61,10 +61,10 @@ export default function HomePage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'School',
-            name: 'Trinity Christian School',
-            alternateName: 'Trinity Christian School Nsoatre',
+            name: 'Trinity Christian School Nsoatre',
+            alternateName: 'Trinity Christian School',
             description:
-              'A Christ-centred school offering creche, nursery, KG, primary, and JHS education in Nsoatre, Bono Region, Ghana.',
+              'A Christ-centred private Christian school offering creche, nursery, KG, primary, and JHS education in Nsoatre, Bono Region, Ghana.',
             url: 'https://trinityschoolnsoatre.com/',
             mainEntityOfPage: 'https://trinityschoolnsoatre.com/',
             email: 'trinitychristianschoolnsoatre@gmail.com',

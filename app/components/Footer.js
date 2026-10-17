@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
           </div>
           <p className='mt-4 max-w-sm text-white/75'>
-            Nurturing children in faith, excellence, and service in Nsoatre, Bono, Ghana.
+            A Christ-centred private Christian school nurturing confident learners in faith, excellence, and service in Nsoatre, Bono Region, Ghana.
           </p>
         </div>
 
