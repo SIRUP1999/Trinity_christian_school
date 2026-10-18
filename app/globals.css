@@ -759,7 +759,7 @@ img {
   border-radius: 20px;
   overflow: hidden;
   background: #0f172a;
-  min-height: 300px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1005,7 +1005,7 @@ img {
   }
 
   .sp-stage-right {
-    min-height: 240px;
+    min-height: 400px;
   }
 
   .sp-stage-desc {
