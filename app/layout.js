@@ -1,8 +1,11 @@
 import './globals.css'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
+import Script from 'next/script'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+
+const googleAnalyticsId = 'G-MPM9P9LPNS'
 
 const dmSans = DM_Sans({
   variable: '--font-sans',
@@ -57,6 +60,18 @@ export default function RootLayout({ children }) {
           <Footer />
           <WhatsAppButton />
         </div>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy='afterInteractive'
+        />
+        <Script id='google-analytics' strategy='afterInteractive'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
       </body>
     </html>
   )
